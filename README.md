@@ -1,1 +1,1 @@
-Having fun
+Having fun playing around with BIP39 which is the Bitcoin improvement proposal to help create a more consumer friendly version of generating a random number using words from a predefined set of 2048 words which is easier to remember than a really long number.  BIP39 also proposed the use of passphrases.
