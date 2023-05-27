@@ -2,7 +2,7 @@
 // NOT SUGGESTED: you can validate the result a 3rd party like: https://3rditeration.github.io/mnemonic-recovery/src/index.html
 // ALWAYS protect your seed phrase with a pass phrase (BIP39)
 
-using SeedGenerator;
+using Bip39Mnemonic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -10,27 +10,55 @@ using System.Text.RegularExpressions;
 var coinRegex = new Regex("^[HhTt]+$");
 var diceRegex = new Regex("^[1-6]+$");
 bool regenerate;
-const int wordCount = 24;
-var data = new byte[11 * wordCount / 8];
+int wordCount;
+byte[] data;
 
 do
 {
-    Console.WriteLine("Hello, let's generate a 24 word seed phrase!");
+    Console.WriteLine("\r\nHello, let's generate a mnemonic seed phrase (BIP39)!");
+
+    DoesUserWant12Or24Words();
+
+    data = new byte[(int) Math.Round(11m * wordCount / 8m, MidpointRounding.ToPositiveInfinity)];
+
     var autogenerate = DoesUserWantAutogenerate();
 
     if (autogenerate)
     {
-        GenerateRawData();
+        RandomNumberGenerator.Fill(data);
     }
     else
     {
         GetUserGeneratedData();
     }
 
+    AddChecksumData();
+
     Console.WriteLine($"Mnemonic: {string.Join(" ", DeriveSeedPhrase())}");
 
     regenerate = DoesUserWantToGenerateAnotherSeedPhrase();
 } while (regenerate);
+
+void DoesUserWant12Or24Words()
+{
+    string? input;
+    bool properInput;
+    do
+    {
+        Console.WriteLine("Would you like to generate a 12 or 24 word seed phrase?");
+
+        input = Console.ReadLine()?.Trim();
+
+        properInput = input is "12" or "24";
+
+        if (!properInput)
+        {
+            Console.WriteLine("Invalid input, lets try again...");
+        }
+    } while (!properInput);
+
+    wordCount = input is "12" ? 12 : 24;
+}
 
 bool DoesUserWantAutogenerate()
 {
@@ -51,25 +79,6 @@ bool DoesUserWantAutogenerate()
     } while (!properInput);
 
     return input is "A" or "a";
-}
-
-void GenerateRawData()
-{
-    RandomNumberGenerator.Fill(data);
-    AddChecksum();
-}
-
-void AddChecksum()
-{
-    var binary = data.Take(data.Length - 1).ToBinary();
-    Console.WriteLine($"Binary: {binary} (pre-checksum)");
-
-    var hashData = SHA256.HashData(data.AsSpan(0, data.Length - 1));
-    var checksum = BitConverter.ToString(hashData).Replace("-", string.Empty).ToLowerInvariant();
-    var checksumMsb = checksum[..2];
-    data[^1] = Convert.ToByte(checksumMsb, 16);
-    var checksumBinary = data.Skip(data.Length - 1).Take(1).ToBinary();
-    Console.WriteLine($"Checksum: {checksum} --> {checksumMsb[0]}{checksumMsb[1]} (MSB) --> {checksumBinary}");
 }
 
 void GetUserGeneratedData()
@@ -98,8 +107,6 @@ void GetUserGeneratedData()
     {
         GetDiceRollData();
     }
-
-    AddChecksum();
 }
 
 void GetCoinFlipData()
@@ -158,7 +165,7 @@ void GetDiceRollData()
 {
     const int rollsPerWord = 4;
     const int rollsForFirst3BitsOfLastWord = 3;
-    const int rolls = (wordCount - 1) * rollsPerWord + rollsForFirst3BitsOfLastWord;
+    var rolls = (wordCount - 1) * rollsPerWord + rollsForFirst3BitsOfLastWord;
     string input;
     bool properInput;
     do
@@ -196,7 +203,8 @@ void GetDiceRollData()
     } while (!properInput);
 
     var binary = string.Empty;
-    for (var i = 0; i < (rolls - rollsForFirst3BitsOfLastWord) / 4; i++)
+    var loops = (rolls - rollsForFirst3BitsOfLastWord) / 4;
+    for (var i = 0; i < loops; i++)
     {
         var sub = input.Substring(i * 4, 4);
         var binaryWord = string.Empty;
@@ -234,10 +242,24 @@ void GetDiceRollData()
     binary += input[^2] is '1' or '2' or '3' ? '0' : '1';
     binary += input[^1] is '1' or '2' or '3' ? '0' : '1';
 
-    for (var i = 0; i < data.Length - 1; i++)
+    var cutLoopShortBy = wordCount is 12 ? 2 : 1;
+    for (var i = 0; i < data.Length - cutLoopShortBy; i++)
     {
         data[i] = Convert.ToByte(binary.Substring(i * 8, 8), 2);
     }
+}
+
+void AddChecksumData()
+{
+    var binary = data.Take(data.Length - 1).ToBinary();
+    Console.WriteLine($"Binary: {binary} (pre-checksum)");
+
+    var hashData = SHA256.HashData(data.AsSpan(0, data.Length - 1));
+    var checksum = BitConverter.ToString(hashData).Replace("-", string.Empty).ToLowerInvariant();
+    var checksumMsb = checksum[..2];
+    data[^1] = Convert.ToByte(checksumMsb, 16);
+    var checksumBinary = data.Skip(data.Length - 1).Take(1).ToBinary();
+    Console.WriteLine($"Checksum: {checksum} --> {checksumMsb[0]}{checksumMsb[1]} (MSB) --> {checksumBinary}");
 }
 
 IEnumerable<string> DeriveSeedPhrase()
@@ -260,7 +282,7 @@ bool DoesUserWantToGenerateAnotherSeedPhrase()
     bool properInput;
     do
     {
-        Console.WriteLine("Do you want to generate another seed phrase? (Y/N)");
+        Console.WriteLine("\r\nDo you want to generate another seed phrase? (Y/N)");
 
         input = Console.ReadLine();
 
@@ -273,10 +295,4 @@ bool DoesUserWantToGenerateAnotherSeedPhrase()
     } while (!properInput);
 
     return input!.Trim() is "Y" or "y";
-}
-
-internal partial class Program
-{
-    [GeneratedRegex("[HhTt]*")]
-    private static partial Regex MyRegex();
 }

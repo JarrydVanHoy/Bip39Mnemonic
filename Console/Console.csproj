@@ -5,7 +5,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>SeedGenerator</RootNamespace>
+        <RootNamespace>Bip39Mnemonic</RootNamespace>
     </PropertyGroup>
 
 </Project>

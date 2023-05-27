@@ -1,16 +1,12 @@
-namespace SeedGenerator;
+namespace Bip39Mnemonic;
 
 public static class Helpers
 {
-    public static string ToBinary(this IEnumerable<byte> data)
-    {
-        return string.Concat(data.Select(b => Convert.ToString(b, 2).PadLeft(8, '0')));
-    }
-    
     /// <summary>
-    /// Created from https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt
+    ///     Created from https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt
     /// </summary>
-    public static readonly string[] Words = {
+    public static readonly string[] Words =
+    {
         "abandon",
         "ability",
         "able",
@@ -2060,4 +2056,9 @@ public static class Helpers
         "zone",
         "zoo"
     };
+
+    public static string ToBinary(this IEnumerable<byte> data)
+    {
+        return string.Concat(data.Select(b => Convert.ToString(b, 2).PadLeft(8, '0')));
+    }
 }
