@@ -1,0 +1,15 @@
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/bin/Debug/net7.0/SeedGenerator
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/bin/Debug/net7.0/SeedGenerator.deps.json
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/bin/Debug/net7.0/SeedGenerator.runtimeconfig.json
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/bin/Debug/net7.0/SeedGenerator.dll
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/bin/Debug/net7.0/SeedGenerator.pdb
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/obj/Debug/net7.0/SeedGenerator.csproj.AssemblyReference.cache
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/obj/Debug/net7.0/SeedGenerator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/obj/Debug/net7.0/SeedGenerator.AssemblyInfoInputs.cache
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/obj/Debug/net7.0/SeedGenerator.AssemblyInfo.cs
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/obj/Debug/net7.0/SeedGenerator.csproj.CoreCompileInputs.cache
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/obj/Debug/net7.0/SeedGenerator.dll
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/obj/Debug/net7.0/refint/SeedGenerator.dll
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/obj/Debug/net7.0/SeedGenerator.pdb
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/obj/Debug/net7.0/SeedGenerator.genruntimeconfig.cache
+/Users/jarryd/Repos/BitcoinPlayground/SeedGenerator/obj/Debug/net7.0/ref/SeedGenerator.dll
