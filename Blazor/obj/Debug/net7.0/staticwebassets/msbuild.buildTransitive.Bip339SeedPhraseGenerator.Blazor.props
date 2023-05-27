@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/Bip339SeedPhraseGenerator.Blazor.props" />
-</Project>

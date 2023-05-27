@@ -1,5 +1,0 @@
-/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/bin/Release/net7.0/publish/Bip39SeedPhraseGenerator.Console
-/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/bin/Release/net7.0/publish/Bip39SeedPhraseGenerator.Console.dll
-/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/bin/Release/net7.0/publish/Bip39SeedPhraseGenerator.Console.deps.json
-/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/bin/Release/net7.0/publish/Bip39SeedPhraseGenerator.Console.runtimeconfig.json
-/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/bin/Release/net7.0/publish/Bip39SeedPhraseGenerator.Console.pdb
