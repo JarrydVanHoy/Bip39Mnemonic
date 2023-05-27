@@ -1,0 +1,15 @@
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/bin/Release/net7.0/Bip39SeedPhraseGenerator.Console
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/bin/Release/net7.0/Bip39SeedPhraseGenerator.Console.deps.json
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/bin/Release/net7.0/Bip39SeedPhraseGenerator.Console.runtimeconfig.json
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/bin/Release/net7.0/Bip39SeedPhraseGenerator.Console.dll
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/bin/Release/net7.0/Bip39SeedPhraseGenerator.Console.pdb
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/obj/Release/net7.0/Bip39SeedPhraseGenerator.Console.csproj.AssemblyReference.cache
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/obj/Release/net7.0/Bip39SeedPhraseGenerator.Console.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/obj/Release/net7.0/Bip39SeedPhraseGenerator.Console.AssemblyInfoInputs.cache
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/obj/Release/net7.0/Bip39SeedPhraseGenerator.Console.AssemblyInfo.cs
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/obj/Release/net7.0/Bip39SeedPhraseGenerator.Console.csproj.CoreCompileInputs.cache
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/obj/Release/net7.0/Bip39SeedPhraseGenerator.Console.dll
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/obj/Release/net7.0/refint/Bip39SeedPhraseGenerator.Console.dll
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/obj/Release/net7.0/Bip39SeedPhraseGenerator.Console.pdb
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/obj/Release/net7.0/Bip39SeedPhraseGenerator.Console.genruntimeconfig.cache
+/Users/jarryd/Repos/BitcoinPlayground/Bip39SeedPhraseGenerator.Console/obj/Release/net7.0/ref/Bip39SeedPhraseGenerator.Console.dll
