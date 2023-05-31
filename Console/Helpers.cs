@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace Bip39Mnemonic;
 
 public static class Helpers
@@ -2060,5 +2062,25 @@ public static class Helpers
     public static string ToBinary(this IEnumerable<byte> data)
     {
         return string.Concat(data.Select(b => Convert.ToString(b, 2).PadLeft(8, '0')));
+    }
+
+    public static string FormatBinary(this string binary)
+    {
+        var sb = new StringBuilder();
+        for (var row = 0; row < binary.Length / 11; row++)
+        {
+            for (var column = 0; column < 11; column++)
+            {
+                if (column is 4 or 8)
+                {
+                    sb.Append(" ");
+                }
+                sb.Append(binary[row * 11 + column]);
+            }
+
+            sb.Append("\r\n");
+        }
+
+        return sb.ToString();
     }
 }

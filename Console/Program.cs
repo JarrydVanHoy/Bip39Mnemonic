@@ -12,6 +12,7 @@ var diceRegex = new Regex("^[1-6]+$");
 bool regenerate;
 int wordCount;
 byte[] data;
+var random = new Random();
 
 do
 {
@@ -225,7 +226,7 @@ void GetDiceRollData()
         if (binaryWord[11] == '1')
         {
             var reverse = string.Empty;
-            for (var j = 0; j < 11; j++)
+            for (var j = 0; j < 10; j++)
             {
                 reverse += binaryWord[j] is '1' ? '0' : '1';
             }
@@ -234,8 +235,11 @@ void GetDiceRollData()
         }
         else
         {
-            binary += binaryWord[..11];
+            binary += binaryWord[..10];
         }
+        
+        // randomize last bit for extra entropy
+        binary += random.Next(2);
     }
 
     binary += input[^3] is '1' or '2' or '3' ? '0' : '1';
@@ -266,6 +270,7 @@ IEnumerable<string> DeriveSeedPhrase()
 {
     var binary = data.ToBinary();
     Console.WriteLine($"Binary: {binary}");
+    Console.WriteLine($"Binary formatted:\r\n{binary.FormatBinary()}");
 
     var words = new int[wordCount];
     for (var i = 0; i < wordCount; i++)

@@ -1,0 +1,40 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>BIP39 Mnemonic Seed Phrase Generator</h1>
+
+<p>Easily create your own BIP39 comptatible seed phrase.</p>
+
+<p>
+    How many words would you like?
+    <select name="phrase_length" id="phrase_length">
+        <option value="12">12</option>
+        <option value="24">24</option>
+    </select>
+    words
+</p>      
+
+<div class="toggle-container">
+    <button id="tab1Btn" class="active-tab">Auto</button>
+    <button id="tab2Btn">Coin Flips</button>
+    <button id="tab3Btn">Dice Rolls</button>
+</div>
+<div id="tab1Content" class="tab-content active-content">
+    <!-- Content for Tab 1 -->
+    <h2>Tab 1 Content</h2>
+    <p>This is the content for Tab 1.</p>
+</div>
+<div id="tab2Content" class="tab-content">
+    <!-- Content for Tab 2 -->
+    <h2>Tab 2 Content</h2>
+    <p>This is the content for Tab 2.</p>
+</div>
+<div id="tab3Content" class="tab-content">
+    <!-- Content for Tab 2 -->
+    <h2>Tab 3 Content</h2>
+    <p>This is the content for Tab 3.</p>
+</div>
+<div class="result-container">
+    <textarea id="resultTextbox" rows="4" readonly></textarea>
+</div>

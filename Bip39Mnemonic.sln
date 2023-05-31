@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{437E0879-4CC0-413D-9351-7128C2D29219}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csproj", "{C223A436-2C28-4904-AE7F-F97486AAC87C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{80D9AD93-915F-43C1-9EAC-AE6F16C3EA45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{437E0879-4CC0-413D-9351-7128C2D29219}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{437E0879-4CC0-413D-9351-7128C2D29219}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{437E0879-4CC0-413D-9351-7128C2D29219}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C223A436-2C28-4904-AE7F-F97486AAC87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C223A436-2C28-4904-AE7F-F97486AAC87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C223A436-2C28-4904-AE7F-F97486AAC87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C223A436-2C28-4904-AE7F-F97486AAC87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D9AD93-915F-43C1-9EAC-AE6F16C3EA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D9AD93-915F-43C1-9EAC-AE6F16C3EA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D9AD93-915F-43C1-9EAC-AE6F16C3EA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D9AD93-915F-43C1-9EAC-AE6F16C3EA45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
